@@ -1,4 +1,4 @@
-![Logo](app/src/main/res/drawable-xxhdpi/ic_launcher.png)
+![Logo](app/src/main/res/drawable-xhdpi/app_logo.png)
 # Events Around
 
 This is the repository for the capstone project that build during the [Android Developer Nanodegree](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801) program at Udacity.
@@ -20,7 +20,7 @@ The list of the main features of the application:
 </br>
 
 [![License Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=true)](http://www.apache.org/licenses/LICENSE-2.0)
-![minSdkVersion 16](https://img.shields.io/badge/minSdkVersion-19-red.svg?style=true)
+![minSdkVersion 16](https://img.shields.io/badge/minSdkVersion-16-red.svg?style=true)
 ![compileSdkVersion 27](https://img.shields.io/badge/compileSdkVersion-27-yellow.svg?style=true)
 
 ## Event type icon
