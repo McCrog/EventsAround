@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/explore_menu"
+        android:title="@string/explore"
+        android:icon="@drawable/ic_baseline_explore_24px"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/user_name_menu"
+        android:title="@string/user_name"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/settings_menu"
+        android:title="@string/settings"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/sign_out_menu"
+        android:title="@string/sign_out"
+        app:showAsAction="never"/>
+</menu>

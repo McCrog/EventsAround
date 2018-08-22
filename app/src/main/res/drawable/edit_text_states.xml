@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- edit text pressed state -->
+    <item
+        android:state_focused="true"
+        android:drawable="@drawable/edit_text_border_focused_state"
+        />
+    <!-- edit text default state -->
+    <item
+        android:drawable="@drawable/edit_text_border_default_state"
+        />
+</selector>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.DetailFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/event_title_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/event_title_text_view"
+                app:srcCompat="@drawable/ic_baseline_title_24px" />
+
+            <TextView
+                android:id="@+id/event_title_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/event_title_image_view"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/default_info_snippet" />
+
+            <ImageView
+                android:id="@+id/event_type_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/event_type"
+                app:layout_constraintBottom_toBottomOf="@+id/event_type_text_view"
+                app:layout_constraintStart_toStartOf="@+id/event_title_image_view"
+                app:layout_constraintTop_toTopOf="@+id/event_type_text_view"
+                app:srcCompat="@drawable/ic_baseline_label_24px" />
+
+            <TextView
+                android:id="@+id/event_type_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                app:layout_constraintStart_toEndOf="@+id/event_type_image_view"
+                app:layout_constraintTop_toBottomOf="@+id/event_title_text_view"
+                tools:text="Other" />
+
+            <ImageView
+                android:id="@+id/event_date_time_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/date"
+                app:layout_constraintBottom_toBottomOf="@+id/event_date_time_text_view"
+                app:layout_constraintStart_toEndOf="@+id/event_type_text_view"
+                app:layout_constraintTop_toTopOf="@+id/event_date_time_text_view"
+                app:srcCompat="@drawable/ic_baseline_date_range_24px" />
+
+            <TextView
+                android:id="@+id/event_date_time_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/event_type_text_view"
+                app:layout_constraintEnd_toEndOf="@+id/event_title_text_view"
+                app:layout_constraintStart_toEndOf="@+id/event_date_time_image_view"
+                app:layout_constraintTop_toTopOf="@+id/event_type_text_view"
+                tools:text="July 21, 2018 in 12 : 00" />
+
+            <ImageView
+                android:id="@+id/event_location_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/event_location_text_view"
+                app:srcCompat="@drawable/ic_baseline_location_on_24px" />
+
+            <TextView
+                android:id="@+id/event_location_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingStart="16dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="@+id/event_title_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/event_type_text_view"
+                tools:text="@string/default_info_snippet" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/arrow_right"
+                app:layout_constraintBottom_toBottomOf="@+id/event_location_text_view"
+                app:layout_constraintEnd_toEndOf="@+id/event_location_text_view"
+                app:layout_constraintTop_toTopOf="@+id/event_location_text_view"
+                app:srcCompat="@drawable/ic_baseline_arrow_right_24px" />
+
+            <ImageView
+                android:id="@+id/event_description_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/event_description_text_view"
+                app:srcCompat="@drawable/ic_baseline_description_24px" />
+
+            <TextView
+                android:id="@+id/event_description_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="@+id/event_title_text_view"
+                app:layout_constraintStart_toStartOf="@+id/event_title_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/event_location_text_view"
+                tools:text="@string/default_info_snippet" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</FrameLayout>

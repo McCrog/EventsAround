@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/add_event_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ImageView
+                android:id="@+id/event_type_spinner_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/event_type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/event_type_spinner"
+                app:srcCompat="@drawable/ic_baseline_label_24px" />
+
+            <Spinner
+                android:id="@+id/event_type_spinner"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:hint="@string/event_location_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/event_type_spinner_image_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/event_type_spinner_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:text="@string/required_field"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                android:textColor="@color/red"
+                app:layout_constraintStart_toStartOf="@+id/event_type_spinner"
+                app:layout_constraintTop_toBottomOf="@+id/event_type_spinner" />
+
+            <ImageView
+                android:id="@+id/event_title_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@string/title"
+                app:layout_constraintBottom_toBottomOf="@+id/event_title_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/event_title_layout"
+                app:srcCompat="@drawable/ic_baseline_title_24px" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/event_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/event_title_image_view"
+                app:layout_constraintTop_toBottomOf="@+id/event_type_spinner">
+
+                <EditText
+                    android:id="@+id/edit_text_event_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="@string/event_title_hint"
+                    android:inputType="textShortMessage|textCapSentences" />
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/event_description_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/event_description_layout"
+                app:srcCompat="@drawable/ic_baseline_description_24px" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/event_description_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_states"
+                app:layout_constraintEnd_toEndOf="@+id/event_title_layout"
+                app:layout_constraintStart_toStartOf="@+id/event_title_layout"
+                app:layout_constraintTop_toBottomOf="@+id/event_title_layout">
+
+                <EditText
+                    android:id="@+id/edit_text_event_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:gravity="start"
+                    android:hint="@string/event_description_hint"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:lines="3" />
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/event_location_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@string/location"
+                app:layout_constraintBottom_toBottomOf="@+id/event_location_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/event_location_layout"
+                app:srcCompat="@drawable/ic_baseline_location_on_24px" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/event_location_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/event_description_layout"
+                app:layout_constraintStart_toStartOf="@+id/event_description_layout"
+                app:layout_constraintTop_toBottomOf="@+id/event_description_layout">
+
+                <EditText
+                    android:id="@+id/edit_text_event_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="@string/event_location_hint"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/event_date_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@string/date"
+                app:layout_constraintBottom_toBottomOf="@+id/event_date_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/event_date_layout"
+                app:srcCompat="@drawable/ic_baseline_date_range_24px" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/event_date_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/event_location_layout"
+                app:layout_constraintTop_toBottomOf="@+id/event_location_layout">
+
+                <EditText
+                    android:id="@+id/edit_text_event_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="@string/event_date_hint"
+                    android:inputType="date" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/event_time_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/event_location_layout"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/event_location_layout">
+
+                <EditText
+                    android:id="@+id/edit_text_event_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="@string/event_time_hint"
+                    android:inputType="time" />
+            </android.support.design.widget.TextInputLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

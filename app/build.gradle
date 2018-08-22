@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'udacity'
+            keyPassword 'udacity'
+            storeFile file("$rootDir/keystore.jks")
+            storePassword 'udacity'
+        }
+    }
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "io.mccrog.eventsaround"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibrary"
+    implementation "com.android.support:design:$rootProject.ext.supportLibrary"
+    implementation "com.android.support:cardview-v7:$rootProject.ext.supportLibrary"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.supportLibraryConstraintLayout"
+    // Google Android GMS
+    implementation "com.google.android.gms:play-services-maps:$rootProject.ext.googlePlayServices"
+    implementation "com.google.android.gms:play-services-places:$rootProject.ext.googlePlayServices"
+    implementation "com.google.android.gms:play-services-location:$rootProject.ext.googlePlayServices"
+    implementation "com.google.android.gms:play-services-auth:$rootProject.ext.googlePlayServices"
+    // Firebase
+    implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseCore"
+    implementation "com.google.firebase:firebase-database:$rootProject.ext.firebaseDatabase"
+    implementation "com.google.firebase:firebase-auth:$rootProject.ext.firebaseAuth"
+    // GeoFire
+    implementation "com.firebase:geofire-android:$rootProject.ext.firebaseGeofireAndroid"
+    // ButterKnife
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterKnife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnife"
+    // Room
+    implementation "android.arch.persistence.room:runtime:$rootProject.ext.androidArch"
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.ext.androidArch"
+    //Android Architecture Components. ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:$rootProject.ext.androidArch"
+    // Test
+    testImplementation "junit:junit:$rootProject.ext.junit"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.ext.supportTestRunner"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoCore"
+}
+
+apply plugin: 'com.google.gms.google-services'

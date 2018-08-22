@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/events_list"
+        android:icon="@drawable/ic_baseline_list_24px"
+        android:title="@string/events" />
+    <item
+        android:id="@+id/events_map"
+        android:icon="@drawable/ic_baseline_location_on_24px"
+        android:title="@string/map" />
+    <item
+        android:id="@+id/events_favorite"
+        android:icon="@drawable/ic_baseline_favorite_24px"
+        android:title="@string/favorites" />
+</menu>
