@@ -1,10 +1,10 @@
-![Logo](app/src/main/res/drawable-xhdpi/app_logo.png)
+![Main screen](screen/screen_github.png)
 # Events Around
 
 This is the repository for the capstone project that build during the [Android Developer Nanodegree](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801) program at Udacity.
 
 ### Description
-Watch life and events around? The app will help you find interesting events around your placement. Conferences, meetings, games, music events, warnings, etc.
+Are you interested in life and events around? The app will help you find interesting events around your placement. Conferences, meetings, games, music events, warnings, etc.
 
 Did you notice something interesting or are you the organizer of the event? Feel free to share with others. The application allows you to add several types of events with an indication of the exact location.
 
